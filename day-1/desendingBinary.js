@@ -6,7 +6,6 @@ const binarySearch = (arr, target) => {
     let mid
     let asc
 
-
     if (arr[start] < arr[end]) {
         asc = true
     } else {
@@ -40,6 +39,6 @@ const binarySearch = (arr, target) => {
 
 }
 
-console.log(binarySearch(arr2, 25))
+console.log(binarySearch(arr2, 20))
 
 
