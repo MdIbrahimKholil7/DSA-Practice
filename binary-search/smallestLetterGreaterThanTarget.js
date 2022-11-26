@@ -1,5 +1,5 @@
 
-const letters = ["c", "f", "j"], target = "f"
+const letters = ["c", "f", "j"], target = "d"
 
 
 const smallestLaterGreaterThanTarget = (arr, target) => {
@@ -11,26 +11,35 @@ const smallestLaterGreaterThanTarget = (arr, target) => {
     if(arr[end] < target){
         return arr[0]
     }
-
+ 
     while (start <= end) {
         mid = Math.floor((start + end) / 2)
+       
         if (arr[mid] === target) {
-            console.log(arr[mid])
+           
             for (let i = mid; i < arr.length; i++) {
                 if(arr[i] > arr[mid]){
                     return arr[i]
                 }
             }
+
+            return arr[0]
+
         }
 
         if (target < arr[mid]) {
-            end = mid - 1
-            // console.log(end)
+            console.log('hi')
+            end = mid-1
+           console.log(end)
+           console.log(mid)
         } else {
+            console.log('hell')
             start = mid + 1
+           
         }
 
     }
+
     return arr[mid]
 }
 
