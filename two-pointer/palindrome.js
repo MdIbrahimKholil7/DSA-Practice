@@ -1,17 +1,36 @@
 
-
-
-const checkPilondrome = (str) => {
-
-    let size = str.length - 1
-
-    for (let i = 0, k = size; i <= k; i++, k--) {
-        if (str[i] !== str[k]) {
+const isPalindrome = (str) => {
+    let i = 0
+    let j = str.length - 1
+    while (i <= j) {
+        if (str[i] !== str[j]) {
             return false
         }
-        return true
+        i++
+        j--
     }
+    return true
 }
 
-checkPilondrome('mom')
-console.log(checkPilondrome('mom'))
+const leetCode2108 = (arr) => {
+    for (let i = 0; i < arr.length; i++) {
+        if (isPalindrome(arr[i])) {
+            return arr[i]
+        }
+    }
+    return ''
+}
+
+
+// console.log(leetCode2108(['moms', 'racecars', 'yeah']))
+
+
+
+function addSpace(s,arr) {
+    for (let i = 0; i < arr.length; i++) {
+        s[i]+=' '
+    }
+    return s
+}
+
+console.log(addSpace("LeetcodeHelpsMeLearn",[8,13,15]))
